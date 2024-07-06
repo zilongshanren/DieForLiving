@@ -31,6 +31,10 @@ func _ready() -> void:
 			total_time = level1.total_time
 	game_timer.update_ui()
 
+func _input(event):
+	if Input.is_action_just_pressed("retry"):
+		get_tree().reload_current_scene()
+
 func game_end():
 	score_label.text = "Game End!"
 	limitless_dead = false
