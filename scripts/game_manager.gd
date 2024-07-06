@@ -4,6 +4,19 @@ extends Node
 @export var limitless_dead = true
 @export var all_levels:Array[PackedScene]
 
+
+const LEVELS = [
+	"level_1",
+	"level_2",
+	"level_3",
+	"level_4",
+	"level_5",
+	"level_6",
+	"level_7",
+	"level_8",
+	"level_9",
+	"level_10",
+]
 var score = 0
 var current_level = 0
 var current_level_node;
