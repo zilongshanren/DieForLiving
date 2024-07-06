@@ -7,5 +7,5 @@
 position = Vector2(0, 6)
 texture = ExtResource("1_704pw")
 region_enabled = true
-region_rect = Rect2(17.2438, 130.454, 14.1648, 11.9168)
+region_rect = Rect2(17.2438, 130.454, 4.00283, 2.27541)
 script = ExtResource("2_l5k8d")
