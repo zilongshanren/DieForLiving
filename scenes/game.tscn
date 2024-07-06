@@ -23,7 +23,6 @@ font_color = Color(1, 0, 0.537255, 1)
 unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
 total_time = 5
-limitless_dead = null
 all_levels = Array[PackedScene]([ExtResource("2_f1crs"), ExtResource("5_xksgu"), ExtResource("4_617q7"), ExtResource("5_xksgu")])
 
 [node name="MenuButton" type="MenuButton" parent="GameManager"]
