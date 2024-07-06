@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aurlb"]
-size = Vector2(14, 15)
+size = Vector2(16, 15.5)
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["bodies"]]
 z_index = 4

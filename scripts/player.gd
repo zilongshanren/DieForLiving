@@ -31,6 +31,7 @@ func die():
 func reset():
 	is_moving = false
 	is_jumping = false
+	velocity.x = 0
 	timer.start()
 	
 
