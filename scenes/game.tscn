@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=7 format=3 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_nlliu"]
-[ext_resource type="PackedScene" uid="uid://lpbd18s1cspv" path="res://levels/level_1.tscn" id="3_xxw3r"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
 
@@ -27,14 +26,14 @@ text = "You collected X coins."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Level1" parent="." instance=ExtResource("3_xxw3r")]
-
 [node name="Player" parent="." instance=ExtResource("1_rbmkf")]
-position = Vector2(34, 37)
+position = Vector2(-152, 31)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -7)
 zoom = Vector2(4, 4)
+limit_left = -190
+limit_right = 100000000
 limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -56,34 +55,3 @@ theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("7_8cblx")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump."
-
-[node name="Label2" type="Label" parent="Labels"]
-offset_left = 368.0
-offset_top = 78.0
-offset_right = 464.0
-offset_bottom = 96.0
-theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("7_8cblx")
-theme_override_font_sizes/font_size = 8
-text = "Falling hurts..."
-
-[node name="Label3" type="Label" parent="Labels"]
-offset_left = 704.0
-offset_top = -48.0
-offset_right = 800.0
-offset_bottom = -30.0
-theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
-theme_override_fonts/font = ExtResource("7_8cblx")
-theme_override_font_sizes/font_size = 8
-text = "Almost there..."
-
-[node name="Label4" type="Label" parent="Labels"]
-offset_left = 520.0
-offset_top = -163.0
-offset_right = 616.0
-offset_bottom = -145.0
-theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
-theme_override_fonts/font = ExtResource("7_8cblx")
-theme_override_font_sizes/font_size = 8
-text = "Great job!"
-horizontal_alignment = 1

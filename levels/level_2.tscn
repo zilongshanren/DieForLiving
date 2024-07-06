@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://lpbd18s1cspv"]
+[gd_scene load_steps=4 format=3 uid="uid://dh882arngwjvh"]
 
-[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_8duo8"]
+[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_1smjc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ashvg"]
-texture = ExtResource("1_8duo8")
+texture = ExtResource("1_1smjc")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
