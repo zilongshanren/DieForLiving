@@ -11,6 +11,10 @@ atlas = ExtResource("2_nbh34")
 region = Rect2(144, 0, 48, 9)
 
 [node name="Raft" type="RigidBody2D"]
+collision_layer = 3
+gravity_scale = 0.5
+linear_damp = 50.0
+angular_damp = 50.0
 script = ExtResource("1_dakhv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var buoyancy_force = 200
+var buoyancy_force = 1000
 var in_water = false
 
 func _on_Water_body_entered(body):
