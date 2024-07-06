@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://56gfhn4dojsg"]
+
+[ext_resource type="Script" path="res://scripts/raft.gd" id="1_dakhv"]
+[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_nbh34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l502"]
+size = Vector2(48, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak638"]
+atlas = ExtResource("2_nbh34")
+region = Rect2(144, 0, 48, 9)
+
+[node name="Raft" type="RigidBody2D"]
+script = ExtResource("1_dakhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1l502")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = SubResource("AtlasTexture_ak638")

@@ -5,9 +5,7 @@ var uppixel = 8.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var timer = $Timer
-	timer.timeout.connect(_on_DeathCooldownTimer_timeout)
-	self.body_entered.connect(_on_body_entered)
+	pass
 
 func _on_body_entered(body):
 	if can_die:
