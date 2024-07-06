@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://8b74m7vkb3et"]
+
+[ext_resource type="Texture2D" uid="uid://gx1xihdbejvu" path="res://assets/sprites/fruit.png" id="1_a24gh"]
+[ext_resource type="Script" path="res://scripts/gun.gd" id="2_ei4v8"]
+
+[node name="Gun" type="Sprite2D"]
+region_enabled = true
+region_rect = Rect2(19.4084, 48.6213, 10.7915, 16.0238)
+script = ExtResource("2_ei4v8")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_a24gh")
+region_enabled = true
+region_rect = Rect2(19.5738, 47.5331, 10.301, 16.5143)
