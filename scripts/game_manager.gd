@@ -5,18 +5,7 @@ extends Node
 @export var all_levels:Array[PackedScene]
 
 
-const LEVELS = [
-	"level_1",
-	"level_2",
-	"level_3",
-	"level_4",
-	"level_5",
-	"level_6",
-	"level_7",
-	"level_8",
-	"level_9",
-	"level_10",
-]
+
 var score = 0
 var current_level = 0
 var current_level_node;
@@ -41,11 +30,13 @@ func add_point():
 	score += 1
 	score_label.text = "You collected " + str(score) + " coins."
 
-func get_level_name(index):
-	return str("res://levels/", LEVELS[index], ".tscn")
 
 func get_level(index: int):
-	return load(get_level_name(index))
+	if (index <= 0):
+		index = 0
+	if (index >= all_levels.size() - 1):
+		index = all_levels.size() - 1
+	return all_levels[index]
 
 func free_previous_levels():
 	var last_level = get_node("/root/Level")

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_8duo8"]
 [ext_resource type="PackedScene" uid="uid://oglh1h2igpso" path="res://scenes/victory_point.tscn" id="2_jdrkk"]
 [ext_resource type="Script" path="res://scripts/levelConfig.gd" id="2_vylj8"]
-[ext_resource type="Texture2D" uid="uid://dvpat7dj6s6n8" path="res://assets/sprites/DieDieDie.png" id="2_wln2u"]
+[ext_resource type="Texture2D" uid="uid://ccrmup63rni2u" path="res://assets/sprites/DieDieDie.png" id="2_wln2u"]
 [ext_resource type="PackedScene" uid="uid://c284kl8nal0at" path="res://scenes/born_point.tscn" id="4_8p61k"]
 [ext_resource type="PackedScene" uid="uid://bn5vrf5onptrp" path="res://scenes/stab.tscn" id="5_i8q0w"]
 
@@ -1183,6 +1183,9 @@ texture = ExtResource("2_wln2u")
 24:9/0 = 0
 24:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:9/0/physics_layer_0/angular_velocity = 0.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_wvtw0"]
 physics_layer_0/collision_layer = 1
