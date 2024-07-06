@@ -49,17 +49,20 @@ func get_level_name(index):
 func get_level(index: int):
 	return load(get_level_name(index))
 
-func go_to_next_level():
-	game_timer.stop_timer()
-	current_level +=1
-
+func free_previous_levels():
 	var last_level = get_node("/root/Level")
 	if (last_level):
 		last_level.queue_free()
 
-	last_level = get_node("/root/Level1")
-	if (last_level):
-		last_level.queue_free()
+	for i in 20:
+		last_level = get_node("/root/Level" + str(i))
+		if (last_level):
+			last_level.queue_free()
+
+func go_to_next_level():
+	game_timer.stop_timer()
+	current_level +=1
+	free_previous_levels()
 
 	var level = get_level(current_level)
 	load_level(level)

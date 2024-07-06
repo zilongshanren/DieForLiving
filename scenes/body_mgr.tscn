@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnl211lqr04e8"]
+[gd_scene load_steps=3 format=3 uid="uid://clnnhcwe8ele3"]
 
 [ext_resource type="Script" path="res://scripts/BodyMgr.gd" id="1_nqacg"]
-[ext_resource type="PackedScene" uid="uid://y1fvmtv7gss3" path="res://scenes/body.tscn" id="2_hvxkr"]
+[ext_resource type="PackedScene" uid="uid://fq11a1offkph" path="res://scenes/body.tscn" id="2_hvxkr"]
 
 [node name="BodyMgr" type="Node2D" groups=["playerDeathCaring"]]
 script = ExtResource("1_nqacg")
