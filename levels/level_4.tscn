@@ -461,4 +461,4 @@ position = Vector2(-61, 32)
 [node name="Slime" parent="." instance=ExtResource("6_0rnwi")]
 position = Vector2(166, 112)
 scale = Vector2(2, 2)
-SPEED = 60
+SPEED = 200
