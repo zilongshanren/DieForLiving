@@ -2,7 +2,7 @@ extends Node
 
 @export var total_time := 20
 @export var limitless_dead = true
-@export  var levels = []
+@export(Array, PackedScene) var scenes
 
 const LEVELS = [
 	"level_1",
