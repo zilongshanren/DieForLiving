@@ -51,7 +51,8 @@ func load_level(level):
 	# Instance the new scene.
 	var current_scene = level.instantiate()
 
-	var level_data = current_scene.get_child(0)
+	# var script = current_scene.get_script()
+	total_time = current_scene.total_time;
 
 	# Add it to the active scene, as child of root.
 	get_tree().root.add_child(current_scene)
