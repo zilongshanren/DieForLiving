@@ -28,16 +28,19 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("1_rbmkf")]
-position = Vector2(-152, 31)
+position = Vector2(-150, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -7)
-zoom = Vector2(4, 4)
+position = Vector2(2, -20)
+zoom = Vector2(5, 5)
 limit_left = -190
 limit_right = 100000000
 limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Killzone" parent="." instance=ExtResource("5_x8euu")]
 position = Vector2(74, 141)
@@ -48,10 +51,10 @@ shape = SubResource("WorldBoundaryShape2D_cn5tm")
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
-offset_left = -119.0
-offset_top = 82.0
-offset_right = -23.0
-offset_bottom = 100.0
+offset_left = -139.0
+offset_top = -40.0
+offset_right = -43.0
+offset_bottom = -22.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("7_8cblx")
 theme_override_font_sizes/font_size = 8
