@@ -1,6 +1,6 @@
 extends Node
 
-@export var total_time := 100
+@export var total_time := 20
 @export var limitless_dead = true
 
 const LEVELS = [
@@ -21,6 +21,7 @@ var current_level_node;
 
 
 @onready var score_label = $ScoreLabel
+
 
 func game_end():
 	score_label.text = "Game End!"
@@ -49,6 +50,8 @@ func load_level(level):
 
 	# Instance the new scene.
 	var current_scene = level.instantiate()
+
+	var level_data = current_scene.get_child(0)
 
 	# Add it to the active scene, as child of root.
 	get_tree().root.add_child(current_scene)

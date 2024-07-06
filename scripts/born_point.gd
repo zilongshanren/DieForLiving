@@ -7,6 +7,9 @@ func _ready() -> void:
 
 func on_player_dead(player, _original_pos):
 	if (game_manager.limitless_dead):
-		player.position = self.global_position
+		player_spawn(player)
 	else:
 		player.die()
+
+func player_spawn(player):
+	player.position = self.global_position
