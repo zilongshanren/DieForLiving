@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=8 format=3 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_nlliu"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
+[ext_resource type="PackedScene" uid="uid://dnl211lqr04e8" path="res://scenes/body_mgr.tscn" id="6_k8qrh"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cn5tm"]
@@ -55,3 +56,7 @@ theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("7_8cblx")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump."
+
+[node name="BodyMgr" parent="." instance=ExtResource("6_k8qrh")]
+
+[connection signal="body_entered" from="Killzone" to="BodyMgr" method="_on_player_dead"]
