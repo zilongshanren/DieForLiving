@@ -22,6 +22,7 @@ var current_level_node;
 
 @onready var score_label = $ScoreLabel
 @onready var game_timer  = $timer
+@onready var player = get_node("/root/Game/Player")
 
 func _ready() -> void:
 	var level1 = get_node("/root/Level1");
@@ -70,6 +71,8 @@ func load_level(level):
 	total_time = current_scene.total_time;
 	new_game()
 	game_timer.start_timer(1)
+	var born_point = current_scene.get_node("BornPoint")
+	born_point.player_spawn(player)
 
 	# Add it to the active scene, as child of root.
 	get_tree().root.add_child(current_scene)
