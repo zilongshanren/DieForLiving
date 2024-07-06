@@ -6,6 +6,9 @@ func _ready() -> void:
 	game_manager = get_node("/root/Game/GameManager")
 
 func on_player_dead(player, _original_pos, is_freezed):
+	if (!game_manager):
+		game_manager = get_node("/root/Game/GameManager")
+
 	if (game_manager.limitless_dead):
 		player_spawn(player)
 	else:
