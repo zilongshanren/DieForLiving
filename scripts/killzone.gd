@@ -4,6 +4,9 @@ extends Area2D
 var last_body_create_timestamp = 0
 
 func _on_body_entered(body):
+	if not body.is_in_group("player_character"):
+		return
+		
 	# 0.5s内只死亡一次
 	var cur_timestamp = Time.get_ticks_msec()
 	if cur_timestamp - last_body_create_timestamp < 500:

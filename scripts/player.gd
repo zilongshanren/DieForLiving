@@ -59,6 +59,9 @@ func _process(_delta):
 		need_detect = false
 		emit_signal("player_start_playing")
 
+func _ready():
+	add_to_group("player_character")
+
 func _physics_process(delta):
 	if (is_dead || !is_moving):
 		if not is_on_floor():
