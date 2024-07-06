@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wopnu"]
 size = Vector2(14.5, 5)
 
-[node name="Stab" type="Node2D"]
+[node name="stab_freezed" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.2, 0)
