@@ -21,7 +21,7 @@ var current_level_node;
 
 
 @onready var score_label = $ScoreLabel
-
+@onready var game_timer  = $timer
 
 func game_end():
 	score_label.text = "Game End!"
@@ -38,13 +38,22 @@ func get_level(index: int):
 	return load(get_level_name(index))
 
 func go_to_next_level():
-
+	game_timer.stop_timer()
 	current_level +=1
-	var last_level = get_node("/root/Level" + str(current_level))
-	last_level.queue_free()
+
+	var last_level = get_node("/root/Level")
+	if (last_level):
+		last_level.queue_free()
+
+	last_level = get_node("/root/Level1")
+	if (last_level):
+		last_level.queue_free()
 
 	var level = get_level(current_level)
 	load_level(level)
+
+func new_game():
+	limitless_dead = true
 
 func load_level(level):
 
@@ -53,6 +62,8 @@ func load_level(level):
 
 	# var script = current_scene.get_script()
 	total_time = current_scene.total_time;
+	new_game()
+	game_timer.start_timer(1)
 
 	# Add it to the active scene, as child of root.
 	get_tree().root.add_child(current_scene)

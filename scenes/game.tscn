@@ -31,6 +31,10 @@ theme_override_font_sizes/font_size = 8
 label_settings = SubResource("LabelSettings_84vge")
 horizontal_alignment = 1
 
+[node name="timer" parent="GameManager" instance=ExtResource("7_0eq7x")]
+z_index = 100
+position = Vector2(-6, -127)
+
 [node name="Player" parent="." instance=ExtResource("1_rbmkf")]
 position = Vector2(-152, 31)
 
@@ -62,8 +66,5 @@ theme_override_font_sizes/font_size = 8
 text = "Space to jump."
 
 [node name="BodyMgr" parent="." instance=ExtResource("6_k8qrh")]
-
-[node name="timer" parent="." instance=ExtResource("7_0eq7x")]
-position = Vector2(-6, -127)
 
 [connection signal="body_entered" from="Killzone" to="BodyMgr" method="_on_player_dead"]

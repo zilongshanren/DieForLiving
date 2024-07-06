@@ -7,6 +7,13 @@ func _ready() -> void:
 	update_ui()
 	$Timer.start()
 
+func stop_timer():
+	$Timer.stop()
+
+func start_timer(time):
+	update_ui()
+	$Timer.start(time)
+	$Timer.start()
 
 func update_ui():
 	$Label.text = str(game_manager.total_time)
