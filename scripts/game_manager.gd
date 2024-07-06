@@ -23,6 +23,11 @@ var current_level_node;
 @onready var score_label = $ScoreLabel
 @onready var game_timer  = $timer
 
+func _ready() -> void:
+	var level1 = get_node("/root/Level1");
+	total_time = level1.total_time
+	game_timer.update_ui()
+
 func game_end():
 	score_label.text = "Game End!"
 	limitless_dead = false
