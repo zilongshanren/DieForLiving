@@ -12,12 +12,12 @@ func _ready():
 func _process(delta):
 	pass
 
-func on_player_dead(player):
+func on_player_dead(player, pos):
 
 	var body = body_scene.instantiate()
 
 	# Choose a random location on Path2D.
-	body.position = player.position
+	body.position = pos
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(body)

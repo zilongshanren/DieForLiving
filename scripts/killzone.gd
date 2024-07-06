@@ -12,7 +12,7 @@ func _on_body_entered(body):
 		
 	print("You died!")
 	#var group_mem = get_tree().get_nodes_in_group("bodyCaring")
-	get_tree().call_group("bodyCaring", "on_player_dead", body)
+	get_tree().call_group("playerDeathCaring", "on_player_dead", body, body.global_position)
 	#var group_node = get_tree().get_nodes_in_group("bodyCaring")
 	#body.visible = false
 	#Engine.time_scale = 0.5
