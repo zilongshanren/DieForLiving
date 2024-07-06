@@ -7,9 +7,12 @@ const LEVELS = [
 	"level_4",
 ]
 var score = 0
+var current_level = 0
+var current_level_node;
 
 
 @onready var score_label = $ScoreLabel
+
 
 func add_point():
 	score += 1
@@ -18,15 +21,19 @@ func add_point():
 func get_level(index: int):
 	return load(str("res://levels/", LEVELS[index], ".tscn"))
 
-func _enter_tree() -> void:
-	var level = get_level(0)
+func go_to_next_level():
+	current_level +=1
+	var level = get_level(current_level)
+	load_level(level)
 
+func load_level(level):
 	# Instance the new scene.
-	# var current_scene = level.instantiate()
+	var current_scene = level.instantiate()
 
 	# Add it to the active scene, as child of root.
-	# get_tree().root.add_child(current_scene)
+	get_tree().root.add_child(current_scene)
 
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
-	# get_tree().current_scene = current_scene
+	get_tree().current_scene = current_scene
+
 
