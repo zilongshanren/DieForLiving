@@ -20,7 +20,7 @@ func _on_timer_timeout():
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		get_tree().call_group("playerDeathCaring", "on_player_dead", body, body.global_position)
+		get_tree().call_group("playerDeathCaring", "on_player_dead", body, body.global_position, false)
 		queue_free()
 	else:
 		print("bullet hit:" + body.to_string())
