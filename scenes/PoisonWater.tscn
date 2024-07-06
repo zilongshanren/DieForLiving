@@ -1,10 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bclesxbddvijn"]
+[gd_scene load_steps=5 format=3 uid="uid://bclesxbddvijn"]
 
 [ext_resource type="Script" path="res://scripts/PoisonWater.gd" id="1_rri0k"]
+[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_gy7xl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpgbk"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4vta"]
+atlas = ExtResource("2_gy7xl")
+region = Rect2(63.987, 190, 16, 16)
 
 [node name="PoisonWater" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_rri0k")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_jpgbk")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = SubResource("AtlasTexture_e4vta")
