@@ -1,5 +1,8 @@
 extends Node
 
+@export var total_time := 20
+@export var limitless_dead = true
+
 const LEVELS = [
 	"level_1",
 	"level_2",
@@ -18,7 +21,19 @@ var current_level_node;
 
 
 @onready var score_label = $ScoreLabel
+@onready var game_timer  = $timer
+@onready var player = get_node("/root/Game/Player")
 
+func _ready() -> void:
+	for i in 10:
+		var level1 = get_node("/root/Level"+str(i));
+		if (level1):
+			total_time = level1.total_time
+	game_timer.update_ui()
+
+func game_end():
+	score_label.text = "Game End!"
+	limitless_dead = false
 
 func add_point():
 	score += 1
@@ -31,18 +46,37 @@ func get_level(index: int):
 	return load(get_level_name(index))
 
 func go_to_next_level():
-
+	game_timer.stop_timer()
 	current_level +=1
-	var last_level = get_node("/root/Level" + str(current_level))
-	last_level.queue_free()
+
+	var last_level = get_node("/root/Level")
+	if (last_level):
+		last_level.queue_free()
+
+	last_level = get_node("/root/Level1")
+	if (last_level):
+		last_level.queue_free()
 
 	var level = get_level(current_level)
 	load_level(level)
+
+func new_game():
+	limitless_dead = true
+	get_tree().call_group("bodies", "queue_free")
+	game_timer.stop_timer()
+	game_timer.update_ui()
+	player.reset()
 
 func load_level(level):
 
 	# Instance the new scene.
 	var current_scene = level.instantiate()
+
+	# var script = current_scene.get_script()
+	total_time = current_scene.total_time;
+	new_game()
+	var born_point = current_scene.get_node("BornPoint")
+	born_point.player_spawn(player)
 
 	# Add it to the active scene, as child of root.
 	get_tree().root.add_child(current_scene)
@@ -51,3 +85,5 @@ func load_level(level):
 	get_tree().current_scene = current_scene
 
 
+func _exit_button_pressed():
+	print("press exit button")

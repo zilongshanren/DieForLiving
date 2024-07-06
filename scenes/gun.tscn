@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://8b74m7vkb3et"]
+
+[ext_resource type="Texture2D" uid="uid://gx1xihdbejvu" path="res://assets/sprites/fruit.png" id="1_a24gh"]
+[ext_resource type="PackedScene" uid="uid://jtv5ahkfr4t0" path="res://scenes/bullet.tscn" id="2_dvrel"]
+[ext_resource type="Script" path="res://scripts/gun.gd" id="2_ei4v8"]
+
+[node name="Gun" type="Sprite2D"]
+region_enabled = true
+region_rect = Rect2(19.4084, 48.6213, 10.7915, 16.0238)
+script = ExtResource("2_ei4v8")
+Bullet = ExtResource("2_dvrel")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+rotation = 1.5708
+texture = ExtResource("1_a24gh")
+region_enabled = true
+region_rect = Rect2(19.5738, 47.5331, 10.301, 16.5143)
+
+[node name="ShootingTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]

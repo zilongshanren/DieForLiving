@@ -171,7 +171,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvcm0"]
 radius = 5.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_ofpvf")
@@ -186,3 +186,7 @@ frame_progress = 0.876656
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_bvcm0")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="my_function"]

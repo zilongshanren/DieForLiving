@@ -1,14 +1,15 @@
 extends Sprite2D
 
+var game_manager;
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _ready() -> void:
+	game_manager = get_node("/root/Game/GameManager")
 
+func on_player_dead(player, _original_pos):
+	if (game_manager.limitless_dead):
+		player_spawn(player)
+	else:
+		player.die()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func on_player_dead(player, original_pos):
+func player_spawn(player):
 	player.position = self.global_position

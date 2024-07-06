@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://jtv5ahkfr4t0"]
+
+[ext_resource type="Texture2D" uid="uid://gx1xihdbejvu" path="res://assets/sprites/fruit.png" id="1_dtnw2"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_ym4bi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hy7vx"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e63xn"]
+radius = 5.0
+
+[node name="bullet" type="RigidBody2D"]
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_ym4bi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_dtnw2")
+region_enabled = true
+region_rect = Rect2(38.0769, 60.4023, 3.64852, 3.24313)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hy7vx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_e63xn")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
