@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_84vge"]
+font = ExtResource("2_nlliu")
 font_color = Color(1, 0, 0.537255, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cn5tm"]

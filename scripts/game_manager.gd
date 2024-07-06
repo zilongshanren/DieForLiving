@@ -2,6 +2,7 @@ extends Node
 
 @export var total_time := 20
 @export var limitless_dead = true
+@export  var levels = []
 
 const LEVELS = [
 	"level_1",
@@ -30,10 +31,6 @@ func _ready() -> void:
 		if (level1):
 			total_time = level1.total_time
 	game_timer.update_ui()
-
-func _input(event):
-	if Input.is_action_just_pressed("retry"):
-		get_tree().reload_current_scene()
 
 func game_end():
 	score_label.text = "Game End!"
