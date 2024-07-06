@@ -2,8 +2,13 @@ extends CharacterBody2D
 
 signal player_start_playing;
 
+@export var jump_period:float
+var fly_begin_time = 0
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
+
+var jump_time = 0
 
 var is_dead = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -36,6 +41,7 @@ func reset():
 	
 
 func _process(_delta):
+	
 	if (!need_detect || is_dead):
 		return
 
@@ -69,13 +75,23 @@ func _physics_process(delta):
 
 		move_and_slide()
 		return
+	
+	if fly_begin_time == 0 and !is_on_floor():
+		fly_begin_time = Time.get_ticks_msec()
+	else:
+		fly_begin_time = 0
+		
+	if is_on_floor():
+		jump_time = 0
 
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor_in_period() and jump_time < 1:
+		jump_time += 1
 		velocity.y = JUMP_VELOCITY
+		
 
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")
@@ -102,3 +118,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+func is_on_floor_in_period():
+	if is_on_floor() or ((Time.get_ticks_msec() - fly_begin_time) < jump_period):
+		return true
+	return false
