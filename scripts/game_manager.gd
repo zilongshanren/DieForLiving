@@ -2,19 +2,10 @@ extends Node
 
 @export var total_time := 20
 @export var limitless_dead = true
+@export var all_levels:Array[PackedScene]
 
-const LEVELS = [
-	"level_1",
-	"level_2",
-	"level_3",
-	"level_4",
-	"level_5",
-	"level_6",
-	"level_7",
-	"level_8",
-	"level_9",
-	"level_10",
-]
+
+
 var score = 0
 var current_level = 0
 var current_level_node;
@@ -39,23 +30,28 @@ func add_point():
 	score += 1
 	score_label.text = "You collected " + str(score) + " coins."
 
-func get_level_name(index):
-	return str("res://levels/", LEVELS[index], ".tscn")
 
 func get_level(index: int):
-	return load(get_level_name(index))
+	if (index <= 0):
+		index = 0
+	if (index >= all_levels.size() - 1):
+		index = all_levels.size() - 1
+	return all_levels[index]
 
-func go_to_next_level():
-	game_timer.stop_timer()
-	current_level +=1
-
+func free_previous_levels():
 	var last_level = get_node("/root/Level")
 	if (last_level):
 		last_level.queue_free()
 
-	last_level = get_node("/root/Level1")
-	if (last_level):
-		last_level.queue_free()
+	for i in 20:
+		last_level = get_node("/root/Level" + str(i))
+		if (last_level):
+			last_level.queue_free()
+
+func go_to_next_level():
+	game_timer.stop_timer()
+	current_level +=1
+	free_previous_levels()
 
 	var level = get_level(current_level)
 	load_level(level)

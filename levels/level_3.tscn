@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://gd1kqm7c8tvb"]
+[gd_scene load_steps=10 format=3 uid="uid://gd1kqm7c8tvb"]
 
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_1smjc"]
 [ext_resource type="Script" path="res://scripts/levelConfig.gd" id="2_8rub5"]
+[ext_resource type="Texture2D" uid="uid://ccrmup63rni2u" path="res://assets/sprites/DieDieDie.png" id="2_hd2my"]
 [ext_resource type="PackedScene" uid="uid://oglh1h2igpso" path="res://scenes/victory_point.tscn" id="2_rvf55"]
 [ext_resource type="PackedScene" uid="uid://c284kl8nal0at" path="res://scenes/born_point.tscn" id="4_6gisa"]
 [ext_resource type="PackedScene" uid="uid://bn5vrf5onptrp" path="res://scenes/stab.tscn" id="5_r6wv8"]
@@ -433,6 +434,39 @@ texture = ExtResource("1_1smjc")
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsily"]
+texture = ExtResource("2_hd2my")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_wvtw0"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -441,8 +475,9 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 custom_data_layer_0/name = "terrian"
 custom_data_layer_0/type = 2
 sources/0 = SubResource("TileSetAtlasSource_ashvg")
+sources/1 = SubResource("TileSetAtlasSource_qsily")
 
-[node name="Level" type="TileMap"]
+[node name="Level3" type="TileMap"]
 position = Vector2(-93, -27)
 tile_set = SubResource("TileSet_wvtw0")
 format = 2
