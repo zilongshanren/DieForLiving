@@ -8,7 +8,7 @@ func _ready():
 	pass
 
 func _on_body_entered(body):
-	if can_die:
+	if body.is_in_group("player_character") and can_die:
 		get_tree().call_group("playerDeathCaring", "on_player_dead", body, body.global_position)
 		#$CollisionShape2D.scale.y += uppixel / (16 * scale.y)
 		#$CollisionShape2D.position.y -= uppixel / (2 * scale.y)
