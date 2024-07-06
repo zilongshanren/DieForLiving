@@ -54,6 +54,7 @@ func go_to_next_level():
 
 func new_game():
 	limitless_dead = true
+	get_tree().call_group("bodies", "queue_free")
 
 func load_level(level):
 
