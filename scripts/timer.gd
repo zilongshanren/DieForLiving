@@ -20,7 +20,9 @@ func start_timer(time):
 	$Timer.start(time)
 
 func update_ui():
-	$Label.text = str(game_manager.total_time)
+	if (!game_manager):
+		game_manager = get_node("/root/Game/GameManager")
+	$Label.text = str(game_manager.total_time) + "s"
 
 
 func _on_timer_timeout() -> void:

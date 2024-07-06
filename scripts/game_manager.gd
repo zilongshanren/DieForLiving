@@ -12,7 +12,7 @@ var current_level_node;
 var current_level_time := 0
 
 @onready var score_label = $ScoreLabel
-@onready var game_timer  = $timer
+@onready var game_timer  = get_node("/root/Game/Player/timer")
 @onready var player = get_node("/root/Game/Player")
 
 func _ready() -> void:
@@ -20,6 +20,9 @@ func _ready() -> void:
 		var level1 = get_node("/root/Level"+str(i));
 		if (level1):
 			total_time = level1.total_time
+
+	if (!game_timer):
+		get_node("/root/Game/Player/timer")
 	game_timer.update_ui()
 	# go_to_next_level(false)
 
