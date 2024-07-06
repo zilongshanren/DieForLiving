@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh882arngwjvh"]
+[gd_scene load_steps=10 format=3 uid="uid://dh882arngwjvh"]
 
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_1smjc"]
 [ext_resource type="Script" path="res://scripts/levelConfig.gd" id="2_8rub5"]
 [ext_resource type="PackedScene" uid="uid://oglh1h2igpso" path="res://scenes/victory_point.tscn" id="2_rvf55"]
+[ext_resource type="Texture2D" uid="uid://ccrmup63rni2u" path="res://assets/sprites/DieDieDie.png" id="2_tgy5k"]
 [ext_resource type="PackedScene" uid="uid://c284kl8nal0at" path="res://scenes/born_point.tscn" id="4_6gisa"]
 [ext_resource type="PackedScene" uid="uid://bn5vrf5onptrp" path="res://scenes/stab.tscn" id="5_r6wv8"]
 
@@ -403,9 +404,43 @@ texture = ExtResource("1_1smjc")
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7pln"]
+texture = ExtResource("2_tgy5k")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_wvtw0"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ashvg")
+sources/1 = SubResource("TileSetAtlasSource_j7pln")
 
 [node name="Level" type="TileMap"]
 position = Vector2(-94, -7)
