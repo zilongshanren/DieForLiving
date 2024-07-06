@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_nlliu"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="PackedScene" path="res://scenes/body_mgr.tscn" id="6_k8qrh"]
-[ext_resource type="PackedScene" uid="uid://bvq28lox3cc21" path="res://scenes/timer.tscn" id="7_0eq7x"]
+[ext_resource type="PackedScene" uid="uid://dforhbrvtmttd" path="res://scenes/timer.tscn" id="7_0eq7x"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_84vge"]

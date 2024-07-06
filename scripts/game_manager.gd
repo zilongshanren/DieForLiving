@@ -1,5 +1,8 @@
 extends Node
 
+@export var total_time := 100
+@export var limitless_dead = true
+
 const LEVELS = [
 	"level_1",
 	"level_2",
@@ -21,6 +24,7 @@ var current_level_node;
 
 func game_end():
 	score_label.text = "Game End!"
+	limitless_dead = false
 
 func add_point():
 	score += 1
