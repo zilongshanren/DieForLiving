@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
-[ext_resource type="PackedScene" uid="uid://lpbd18s1cspv" path="res://levels/level_1.tscn" id="2_f1crs"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_nlliu"]
+[ext_resource type="PackedScene" uid="uid://dh882arngwjvh" path="res://levels/level_2.tscn" id="3_35axh"]
 [ext_resource type="PackedScene" uid="uid://gd1kqm7c8tvb" path="res://levels/level_3.tscn" id="4_617q7"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="PackedScene" uid="uid://csxp83hs504if" path="res://levels/level_4.tscn" id="5_xksgu"]
@@ -23,7 +23,7 @@ font_color = Color(1, 0, 0.537255, 1)
 unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
 total_time = 5
-all_levels = Array[PackedScene]([ExtResource("2_f1crs"), ExtResource("5_xksgu"), ExtResource("4_617q7"), ExtResource("5_xksgu")])
+all_levels = Array[PackedScene]([ExtResource("5_xksgu"), ExtResource("3_35axh"), ExtResource("4_617q7"), ExtResource("5_xksgu")])
 
 [node name="MenuButton" type="MenuButton" parent="GameManager"]
 offset_left = -173.0
