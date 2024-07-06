@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bclesxbddvijn"]
+
+[ext_resource type="Script" path="res://scripts/PoisonWater.gd" id="1_rri0k"]
+
+[node name="PoisonWater" type="Area2D"]
+script = ExtResource("1_rri0k")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
