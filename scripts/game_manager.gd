@@ -5,7 +5,7 @@ extends Node
 @export var all_levels:Array[PackedScene]
 
 
-
+var max_level_num = 20
 var score = 0
 var current_level = 0
 var current_level_node;
@@ -16,7 +16,7 @@ var current_level_node;
 @onready var player = get_node("/root/Game/Player")
 
 func _ready() -> void:
-	for i in 10:
+	for i in max_level_num:
 		var level1 = get_node("/root/Level"+str(i));
 		if (level1):
 			total_time = level1.total_time
@@ -39,18 +39,31 @@ func get_level(index: int):
 	return all_levels[index]
 
 func free_previous_levels():
-	var last_level = get_node("/root/Level")
+	var last_level = get_node("*Level*")
 	if (last_level):
 		last_level.queue_free()
 
-	for i in 20:
-		last_level = get_node("/root/Level" + str(i))
-		if (last_level):
-			last_level.queue_free()
+	# for i in max_level_num:
+	# 	last_level = get_node("/root/Level" + str(i))
+	# 	if (last_level):
+	# 		last_level.queue_free()
+
+func go_to_prev_level():
+	game_timer.stop_timer()
+	current_level -=1
+	if (current_level <= 0):
+		current_level = 0
+
+	free_previous_levels()
+
+	var level = get_level(current_level)
+	load_level(level)
 
 func go_to_next_level():
 	game_timer.stop_timer()
 	current_level +=1
+	if (current_level > all_levels.size()):
+		current_level = all_levels.size() - 1
 	free_previous_levels()
 
 	var level = get_level(current_level)
@@ -83,3 +96,16 @@ func load_level(level):
 
 func _exit_button_pressed():
 	print("press exit button")
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_released(("retry")):
+		print("Retry")
+		new_game()
+		get_tree().reload_current_scene()
+	
+	if Input.is_action_just_released(("next_level")):
+		print("next level")
+		go_to_next_level()
+
+	if Input.is_action_just_pressed(("prev_level")):
+		print("prev level")
