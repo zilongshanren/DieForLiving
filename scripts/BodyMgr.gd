@@ -8,7 +8,7 @@ var game_manager;
 func _ready() -> void:
 	game_manager = get_node("/root/Game/GameManager")
 
-func on_player_dead(_player, pos):
+func on_player_dead(_player, pos, is_freezed):
 	# 0.5s内只死亡一次
 	var cur_timestamp = Time.get_ticks_msec()
 	if cur_timestamp - last_body_create_timestamp < 500:
@@ -19,7 +19,7 @@ func on_player_dead(_player, pos):
 
 	# Choose a random location on Path2D.
 	body.position = pos
-
+	body.is_freezed = is_freezed
 	# Spawn the mob by adding it to the Main scene.
 	add_child(body)
 

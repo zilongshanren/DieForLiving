@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var timer = $Timer
 var last_body_create_timestamp = 0
+@export var is_freezed = false
 
 func _on_body_entered(body):
 	if not body.is_in_group("player_character"):
@@ -15,7 +16,7 @@ func _on_body_entered(body):
 		
 	print("You died!")
 	#var group_mem = get_tree().get_nodes_in_group("bodyCaring")
-	get_tree().call_group("playerDeathCaring", "on_player_dead", body, body.global_position)
+	get_tree().call_group("playerDeathCaring", "on_player_dead", body, body.global_position, is_freezed)
 	#var group_node = get_tree().get_nodes_in_group("bodyCaring")
 	#body.visible = false
 	#Engine.time_scale = 0.5

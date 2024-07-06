@@ -34,6 +34,8 @@ func die():
 	game_manager.game_end()
 
 func reset():
+	visible = true
+	is_dead = false
 	is_moving = false
 	is_jumping = false
 	velocity.x = 0
