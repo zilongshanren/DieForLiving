@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://lpbd18s1cspv"]
+[gd_scene load_steps=7 format=3 uid="uid://lpbd18s1cspv"]
 
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_8duo8"]
-[ext_resource type="PackedScene" uid="uid://oglh1h2igpso" path="res://scenes/victory_point.tscn" id="2_jdrkk"]
+[ext_resource type="PackedScene" path="res://scenes/victory_point.tscn" id="2_jdrkk"]
+[ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="3_mvcol"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ashvg"]
 texture = ExtResource("1_8duo8")
@@ -439,6 +440,9 @@ custom_data_layer_0/name = "terrian"
 custom_data_layer_0/type = 2
 sources/0 = SubResource("TileSetAtlasSource_ashvg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dbmx"]
+size = Vector2(115, 20)
+
 [node name="Level1" type="TileMap"]
 position = Vector2(-93, -27)
 tile_set = SubResource("TileSet_wvtw0")
@@ -450,3 +454,9 @@ layer_1/tile_data = PackedInt32Array(393215, 0, 0, 327680, 0, 0, 327683, 393216,
 
 [node name="victory_point" parent="." instance=ExtResource("2_jdrkk")]
 position = Vector2(9, -66)
+
+[node name="Killzone" parent="." instance=ExtResource("3_mvcol")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(150.5, 104)
+shape = SubResource("RectangleShape2D_6dbmx")
