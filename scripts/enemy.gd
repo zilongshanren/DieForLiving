@@ -1,15 +1,15 @@
 extends RigidBody2D
-#@export shoot_interval = 1
+@export var shooting_interval:float
+@export var bullet_velocity:float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Gun.set_shooting_interval(shooting_interval)
+	$Gun.set_bullet_velocity(bullet_velocity)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time since the previous frame.a
 func _process(delta):
 	pass
-
 
 
 func _on_notice_area_body_entered(body):

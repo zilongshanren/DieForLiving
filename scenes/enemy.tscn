@@ -58,7 +58,11 @@ animations = [{
 size = Vector2(36.25, 34.3333)
 
 [node name="enemy" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
 script = ExtResource("1_cp4vg")
+shooting_interval = 1.0
+bullet_velocity = 10.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_63b1t")
