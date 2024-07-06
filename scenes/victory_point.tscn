@@ -1,22 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://oglh1h2igpso"]
+[gd_scene load_steps=7 format=3 uid="uid://ctifmlycuphkf"]
 
-[ext_resource type="Texture2D" uid="uid://gx1xihdbejvu" path="res://assets/sprites/fruit.png" id="1_uv8tg"]
+[ext_resource type="Texture2D" uid="uid://4oouav3p4kje" path="res://assets/pic/maps.png" id="2_3vp7m"]
 [ext_resource type="Script" path="res://scripts/victory_point.gd" id="2_bu6j7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bvpkd"]
-radius = 3.16228
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqos0"]
+atlas = ExtResource("2_3vp7m")
+region = Rect2(1000, 3000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf77q"]
+atlas = ExtResource("2_3vp7m")
+region = Rect2(1500, 3000, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0er4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqos0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf77q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bb3tx"]
+radius = 5.0
+height = 12.0
 
 [node name="victory_point" type="Area2D"]
 collision_mask = 2
 script = ExtResource("2_bu6j7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_uv8tg")
-region_enabled = true
-region_rect = Rect2(0, 0, 17.5413, 16.8659)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_0er4y")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0856922
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
-shape = SubResource("CircleShape2D_bvpkd")
+shape = SubResource("CapsuleShape2D_bb3tx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
