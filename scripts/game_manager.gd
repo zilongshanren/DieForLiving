@@ -25,8 +25,10 @@ var current_level_node;
 @onready var player = get_node("/root/Game/Player")
 
 func _ready() -> void:
-	var level1 = get_node("/root/Level1");
-	total_time = level1.total_time
+	for i in 10:
+		var level1 = get_node("/root/Level"+str(i));
+		if (level1):
+			total_time = level1.total_time
 	game_timer.update_ui()
 
 func game_end():
@@ -61,6 +63,9 @@ func go_to_next_level():
 func new_game():
 	limitless_dead = true
 	get_tree().call_group("bodies", "queue_free")
+	game_timer.stop_timer()
+	game_timer.update_ui()
+	player.reset()
 
 func load_level(level):
 
@@ -70,7 +75,6 @@ func load_level(level):
 	# var script = current_scene.get_script()
 	total_time = current_scene.total_time;
 	new_game()
-	game_timer.start_timer(1)
 	var born_point = current_scene.get_node("BornPoint")
 	born_point.player_spawn(player)
 
@@ -81,3 +85,5 @@ func load_level(level):
 	get_tree().current_scene = current_scene
 
 
+func _exit_button_pressed():
+	print("press exit button")

@@ -20,6 +20,15 @@ unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
 total_time = 5
 
+[node name="MenuButton" type="MenuButton" parent="GameManager"]
+offset_left = -173.0
+offset_top = -140.0
+offset_right = -133.0
+offset_bottom = -109.0
+toggle_mode = false
+text = "退出"
+flat = false
+
 [node name="ScoreLabel" type="Label" parent="GameManager"]
 offset_left = -25.0
 offset_top = -80.0
@@ -67,4 +76,5 @@ text = "Space to jump."
 
 [node name="BodyMgr" parent="." instance=ExtResource("6_k8qrh")]
 
+[connection signal="pressed" from="GameManager/MenuButton" to="GameManager" method="_exit_button_pressed"]
 [connection signal="body_entered" from="Killzone" to="BodyMgr" method="_on_player_dead"]
