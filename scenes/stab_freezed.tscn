@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bksnfattux5g6"]
+[gd_scene load_steps=5 format=3 uid="uid://bksnfattux5g6"]
 
-[ext_resource type="Texture2D" uid="uid://4oouav3p4kje" path="res://assets/pic/maps.png" id="1_gya2r"]
+[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="1_kd7u6"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="2_sops4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tn6g"]
+atlas = ExtResource("1_kd7u6")
+region = Rect2(80, 187, 16, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wopnu"]
 size = Vector2(14.5, 5)
@@ -11,7 +15,7 @@ size = Vector2(14.5, 5)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.2, 0)
 scale = Vector2(0.029, 0.029)
-texture = ExtResource("1_gya2r")
+texture = SubResource("AtlasTexture_7tn6g")
 region_enabled = true
 region_rect = Rect2(1003, 1840, 498, 159)
 
