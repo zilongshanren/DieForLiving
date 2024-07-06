@@ -4,12 +4,21 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
 
+var is_dead = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var game_manager = %GameManager
+
+func die():
+	visible = false
+	is_dead = true
+	game_manager.game_end()
 
 func _physics_process(delta):
+	if (is_dead):
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

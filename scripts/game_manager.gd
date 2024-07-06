@@ -19,6 +19,8 @@ var current_level_node;
 
 @onready var score_label = $ScoreLabel
 
+func game_end():
+	score_label.text = "Game End!"
 
 func add_point():
 	score += 1

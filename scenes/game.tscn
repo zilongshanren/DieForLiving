@@ -1,11 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=10 format=3 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_nlliu"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
-[ext_resource type="PackedScene" uid="uid://dnl211lqr04e8" path="res://scenes/body_mgr.tscn" id="6_k8qrh"]
+[ext_resource type="PackedScene" path="res://scenes/body_mgr.tscn" id="6_k8qrh"]
+[ext_resource type="PackedScene" uid="uid://bvq28lox3cc21" path="res://scenes/timer.tscn" id="7_0eq7x"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_84vge"]
+font_color = Color(1, 0, 0.537255, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cn5tm"]
 
@@ -14,33 +18,30 @@
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
+total_time = 5
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 513.0
-offset_top = -144.0
-offset_right = 618.0
-offset_bottom = -125.0
+offset_left = -25.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = -61.0
 theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
 theme_override_fonts/font = ExtResource("2_nlliu")
 theme_override_font_sizes/font_size = 8
-text = "You collected X coins."
+label_settings = SubResource("LabelSettings_84vge")
 horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("1_rbmkf")]
-position = Vector2(-150, 0)
+position = Vector2(-152, 31)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(2, -20)
-zoom = Vector2(5, 5)
+position = Vector2(0, -7)
+zoom = Vector2(4, 4)
 limit_left = -190
 limit_right = 100000000
 limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
-drag_vertical_enabled = true
-editor_draw_limits = true
-editor_draw_drag_margin = true
 
 [node name="Killzone" parent="." instance=ExtResource("5_x8euu")]
 position = Vector2(74, 141)
@@ -51,15 +52,18 @@ shape = SubResource("WorldBoundaryShape2D_cn5tm")
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
-offset_left = -139.0
-offset_top = -40.0
-offset_right = -43.0
-offset_bottom = -22.0
+offset_left = -135.0
+offset_top = -29.0
+offset_right = -39.0
+offset_bottom = -11.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("7_8cblx")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump."
 
 [node name="BodyMgr" parent="." instance=ExtResource("6_k8qrh")]
+
+[node name="timer" parent="." instance=ExtResource("7_0eq7x")]
+position = Vector2(-6, -127)
 
 [connection signal="body_entered" from="Killzone" to="BodyMgr" method="_on_player_dead"]
