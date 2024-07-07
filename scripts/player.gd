@@ -23,6 +23,9 @@ var need_detect = true
 @onready var timer = $Timer
 
 
+func will_die_after_dead():
+	animated_sprite.use_parent_material = true
+
 func my_function():
 	print("Function called after 1 second")
 	need_detect = true
@@ -39,6 +42,7 @@ func reset():
 	is_moving = false
 	is_jumping = false
 	velocity.x = 0
+	animated_sprite.use_parent_material = false
 	timer.start()
 	
 
