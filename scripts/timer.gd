@@ -27,8 +27,10 @@ func update_ui():
 
 func _on_timer_timeout() -> void:
 	game_manager.total_time -= 0.1
-	update_ui()
-	if (game_manager.total_time == 0):
+	if (game_manager.total_time <= 0):
+		game_manager.total_time = 0
 		game_manager.limitless_dead = false
 		$Timer.stop()
+
+	update_ui()
 
