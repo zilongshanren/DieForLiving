@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=14 format=3 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://clnnhcwe8ele3" path="res://scenes/body_mgr.tscn" id="6_k8qrh"]
 [ext_resource type="PackedScene" path="res://scenes/all_black_hud.tscn" id="6_sxuu8"]
 [ext_resource type="PackedScene" uid="uid://dforhbrvtmttd" path="res://scenes/timer.tscn" id="7_0eq7x"]
-[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
 [ext_resource type="PackedScene" path="res://scenes/StartPage.tscn" id="7_lspmy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_84vge"]
@@ -26,15 +25,6 @@ unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
 total_time = 5
 all_levels = Array[PackedScene]([ExtResource("5_xksgu"), ExtResource("3_35axh"), ExtResource("4_617q7"), ExtResource("5_xksgu")])
-
-[node name="MenuButton" type="MenuButton" parent="GameManager"]
-offset_left = -173.0
-offset_top = -140.0
-offset_right = -133.0
-offset_bottom = -109.0
-toggle_mode = false
-text = "退出"
-flat = false
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
 offset_left = -25.0
@@ -73,19 +63,6 @@ position = Vector2(74, 141)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_cn5tm")
 
-[node name="Labels" type="Node" parent="."]
-
-[node name="Label" type="Label" parent="Labels"]
-offset_left = -135.0
-offset_top = -29.0
-offset_right = -39.0
-offset_bottom = -11.0
-theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("7_8cblx")
-theme_override_font_sizes/font_size = 8
-text = "Space to jump."
-
 [node name="BodyMgr" parent="." instance=ExtResource("6_k8qrh")]
 
-[connection signal="pressed" from="GameManager/MenuButton" to="GameManager" method="_exit_button_pressed"]
 [connection signal="body_entered" from="Killzone" to="BodyMgr" method="_on_player_dead"]
