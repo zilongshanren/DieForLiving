@@ -3,15 +3,15 @@
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
 [ext_resource type="PackedScene" uid="uid://cw74kjqd4kffs" path="res://levels/level_6.tscn" id="2_eg0j6"]
+[ext_resource type="PackedScene" uid="uid://gd1kqm7c8tvb" path="res://levels/level_3.tscn" id="2_mk0r4"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_nlliu"]
 [ext_resource type="PackedScene" uid="uid://dh882arngwjvh" path="res://levels/level_2.tscn" id="3_35axh"]
-[ext_resource type="PackedScene" uid="uid://gd1kqm7c8tvb" path="res://levels/level_3.tscn" id="4_617q7"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="PackedScene" uid="uid://csxp83hs504if" path="res://levels/level_4.tscn" id="5_xksgu"]
 [ext_resource type="PackedScene" uid="uid://clnnhcwe8ele3" path="res://scenes/body_mgr.tscn" id="6_k8qrh"]
-[ext_resource type="PackedScene" path="res://scenes/all_black_hud.tscn" id="6_sxuu8"]
+[ext_resource type="PackedScene" uid="uid://d3fm4lkwm75be" path="res://scenes/all_black_hud.tscn" id="6_sxuu8"]
 [ext_resource type="PackedScene" uid="uid://dforhbrvtmttd" path="res://scenes/timer.tscn" id="7_0eq7x"]
-[ext_resource type="PackedScene" path="res://scenes/StartPage.tscn" id="7_lspmy"]
+[ext_resource type="PackedScene" uid="uid://cxfbdoqhko64u" path="res://scenes/StartPage.tscn" id="7_lspmy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_84vge"]
 font = ExtResource("2_nlliu")
@@ -24,7 +24,7 @@ font_color = Color(1, 0, 0.537255, 1)
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
-all_levels = Array[PackedScene]([ExtResource("4_617q7"), ExtResource("3_35axh"), ExtResource("5_xksgu"), ExtResource("2_eg0j6")])
+all_levels = Array[PackedScene]([ExtResource("2_mk0r4"), ExtResource("3_35axh"), ExtResource("5_xksgu"), ExtResource("2_eg0j6")])
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
 offset_left = -25.0
