@@ -1,6 +1,6 @@
 extends Node
 
-@export var total_time := 20
+@export var total_time := 20.0
 @export var limitless_dead = true
 @export var all_levels:Array[PackedScene]
 
