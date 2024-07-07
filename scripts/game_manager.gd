@@ -136,6 +136,8 @@ func _input(_event: InputEvent) -> void:
 		new_game()
 		# var start_hud  = get_node("/root/Game/GameManager/StartPage")
 		# start_hud.visible = false
+		var game_end_label = get_node("/root/Game/GameManager/ScoreLabel")
+		game_end_label.visible = false
 		get_tree().reload_current_scene()
 			
 	
