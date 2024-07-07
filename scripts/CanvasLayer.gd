@@ -17,4 +17,4 @@ func _on_timer_timeout():
 
 func _on_button_pressed():
 	visible = false
-	queue_free()
+	# queue_free()
