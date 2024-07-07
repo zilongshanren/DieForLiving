@@ -27,6 +27,7 @@ script = ExtResource("1_l4ihi")
 all_levels = Array[PackedScene]([ExtResource("2_mk0r4"), ExtResource("3_35axh"), ExtResource("5_xksgu"), ExtResource("2_eg0j6")])
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
+z_index = 10
 offset_left = -25.0
 offset_top = -80.0
 offset_right = 80.0

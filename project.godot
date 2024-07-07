@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Music="*res://scenes/music.tscn"
 Level1="*res://levels/level_1.tscn"
+Global="*res://scripts/Global.gd"
 
 [display]
 

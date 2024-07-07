@@ -15,6 +15,11 @@ var current_level_time := 0
 @onready var game_timer  = get_node("/root/Game/Player/timer")
 @onready var player = get_node("/root/Game/Player")
 
+func time_up():
+	total_time = 0
+	limitless_dead = false
+	player.will_die_after_dead()
+
 func _ready() -> void:
 	for i in max_level_num:
 		var level1 = get_node("/root/Level"+str(i));
@@ -82,6 +87,8 @@ func go_to_next_level(is_new_game):
 func new_game():
 	limitless_dead = true
 	total_time = current_level_time
+	if ($score_label):
+		$score_label.visible = false
 	get_tree().call_group("bodies", "queue_free")
 	game_timer.stop_timer()
 	game_timer.update_ui()
@@ -123,7 +130,10 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_released(("retry")):
 		print("Retry")
 		new_game()
+		# var start_hud  = get_node("/root/Game/GameManager/StartPage")
+		# start_hud.visible = false
 		get_tree().reload_current_scene()
+			
 	
 	if Input.is_action_just_released(("next_level")):
 		print("next level")
