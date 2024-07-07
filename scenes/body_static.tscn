@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://51t2q36dsoen"]
+
+[ext_resource type="Texture2D" uid="uid://driylga4ol4io" path="res://assets/sprites/player_sprite_sheet.png" id="1_viblg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fpyr"]
+atlas = ExtResource("1_viblg")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e812j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fpyr")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec07y"]
+size = Vector2(16, 15.5)
+
+[node name="BodyStatic" type="StaticBody2D" groups=["bodies"]]
+disable_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_e812j")
+animation = &"dead"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ec07y")

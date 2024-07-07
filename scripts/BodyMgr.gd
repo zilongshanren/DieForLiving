@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var body_scene:PackedScene
+@export var body_static_scene:PackedScene
 var last_body_create_timestamp = 0
 
 var game_manager;
@@ -15,13 +16,19 @@ func on_player_dead(_player, pos, is_freezed):
 		return
 	last_body_create_timestamp = cur_timestamp
 	
-	var body = body_scene.instantiate()
+	if is_freezed:
+		var body = body_static_scene.instantiate()
+		# Choose a random location on Path2D.
+		body.position = pos
+		# Spawn the mob by adding it to the Main scene.
+		add_child(body)
+	else:
+		var body = body_scene.instantiate()
+		# Choose a random location on Path2D.
+		body.position = pos
+		# Spawn the mob by adding it to the Main scene.
+		add_child(body)
 
-	# Choose a random location on Path2D.
-	body.position = pos
-	body.is_freezed = is_freezed
-	# Spawn the mob by adding it to the Main scene.
-	add_child(body)
 
 	if (!game_manager.limitless_dead):
 		print("game end!")
