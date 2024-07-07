@@ -22,11 +22,11 @@ func start_timer(time):
 func update_ui():
 	if (!game_manager):
 		game_manager = get_node("/root/Game/GameManager")
-	$Label.text = str(game_manager.total_time) + "s"
+	$Label.text = "%.1f" % game_manager.total_time + "s"
 
 
 func _on_timer_timeout() -> void:
-	game_manager.total_time -= 1
+	game_manager.total_time -= 0.1
 	update_ui()
 	if (game_manager.total_time == 0):
 		game_manager.limitless_dead = false

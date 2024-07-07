@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr4h02okf5dxj"]
+[gd_scene load_steps=7 format=3 uid="uid://cxfbdoqhko64u"]
 
 [ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="1_ymgux"]
-[ext_resource type="Texture2D" uid="uid://67j5ka8g358d" path="res://assets/pic/Bg.png" id="2_bwovt"]
-[ext_resource type="Texture2D" uid="uid://c8gdh0at3wtyl" path="res://assets/pic/title.png" id="3_vo74y"]
-[ext_resource type="Texture2D" uid="uid://dnptst7vjjjym" path="res://assets/pic/circle.png" id="4_enxt8"]
-[ext_resource type="Texture2D" uid="uid://c7kgyul3uiogw" path="res://assets/pic/button.png" id="5_o1i24"]
-[ext_resource type="Texture2D" uid="uid://bn1vtx77usawl" path="res://assets/pic/start.png" id="6_asu1l"]
+[ext_resource type="Texture2D" path="res://assets/pic/Bg.png" id="2_bwovt"]
+[ext_resource type="Texture2D" path="res://assets/pic/title.png" id="3_vo74y"]
+[ext_resource type="Texture2D" path="res://assets/pic/circle.png" id="4_enxt8"]
+[ext_resource type="Texture2D" path="res://assets/pic/button.png" id="5_o1i24"]
+[ext_resource type="Texture2D" path="res://assets/pic/start.png" id="6_asu1l"]
 
 [node name="StartPage" type="CanvasLayer"]
 script = ExtResource("1_ymgux")

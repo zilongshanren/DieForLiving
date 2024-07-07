@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="PackedScene" uid="uid://csxp83hs504if" path="res://levels/level_4.tscn" id="5_xksgu"]
 [ext_resource type="PackedScene" uid="uid://clnnhcwe8ele3" path="res://scenes/body_mgr.tscn" id="6_k8qrh"]
-[ext_resource type="PackedScene" path="res://scenes/all_black_hud.tscn" id="6_sxuu8"]
+[ext_resource type="PackedScene" uid="uid://d3fm4lkwm75be" path="res://scenes/all_black_hud.tscn" id="6_sxuu8"]
 [ext_resource type="PackedScene" uid="uid://dforhbrvtmttd" path="res://scenes/timer.tscn" id="7_0eq7x"]
-[ext_resource type="PackedScene" path="res://scenes/StartPage.tscn" id="7_lspmy"]
+[ext_resource type="PackedScene" uid="uid://cxfbdoqhko64u" path="res://scenes/StartPage.tscn" id="7_lspmy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_84vge"]
 font = ExtResource("2_nlliu")
@@ -23,7 +23,6 @@ font_color = Color(1, 0, 0.537255, 1)
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
-total_time = 5
 all_levels = Array[PackedScene]([ExtResource("5_xksgu"), ExtResource("3_35axh"), ExtResource("4_617q7"), ExtResource("5_xksgu")])
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
@@ -55,7 +54,7 @@ position_smoothing_enabled = true
 
 [node name="timer" parent="Player" instance=ExtResource("7_0eq7x")]
 z_index = 100
-position = Vector2(-7, -6)
+position = Vector2(-14, -11)
 
 [node name="Killzone" parent="." instance=ExtResource("5_x8euu")]
 position = Vector2(74, 141)
