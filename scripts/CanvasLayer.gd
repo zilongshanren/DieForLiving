@@ -1,15 +1,9 @@
 extends CanvasLayer
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+func _process(_delta: float) -> void:
+	if (Global.main_menu_display):
+		visible = false
 
 func _on_timer_timeout():
 	$Sprite2D.rotation += 0.1
@@ -17,4 +11,5 @@ func _on_timer_timeout():
 
 func _on_button_pressed():
 	visible = false
+	Global.main_menu_display = true
 	queue_free()

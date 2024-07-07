@@ -224,6 +224,7 @@ size = Vector2(12, 13)
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_ofpvf")
+jump_period = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_4otyw")
