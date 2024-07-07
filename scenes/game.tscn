@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://scenes/all_black_hud.tscn" id="6_sxuu8"]
 [ext_resource type="PackedScene" uid="uid://dforhbrvtmttd" path="res://scenes/timer.tscn" id="7_0eq7x"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
-[ext_resource type="PackedScene" uid="uid://dr4h02okf5dxj" path="res://scenes/StartPage.tscn" id="7_lspmy"]
+[ext_resource type="PackedScene" path="res://scenes/StartPage.tscn" id="7_lspmy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_84vge"]
 font = ExtResource("2_nlliu")
