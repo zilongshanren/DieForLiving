@@ -14,6 +14,7 @@ var current_level_time := 0
 @onready var score_label = $ScoreLabel
 @onready var game_timer  = get_node("/root/Game/Player/timer")
 @onready var player = get_node("/root/Game/Player")
+@onready var game_end_panel = $AllBlackHUD
 
 func time_up():
 	total_time = 0
@@ -73,10 +74,13 @@ func go_to_prev_level(is_new_game):
 func go_to_next_level(is_new_game):
 	game_timer.stop_timer()
 	current_level +=1
-	if (current_level > all_levels.size()):
+	if (current_level >= all_levels.size()):
 		current_level = all_levels.size() - 1
+		print("congratulations! All level clears!")
+		game_end_panel.visible = true
+		player.queue_free()
+		return
 
-	$AllBlackHUD.visible = true
 	free_previous_levels()
 	await get_tree().create_timer(0.3).timeout
 	$AllBlackHUD.visible = false

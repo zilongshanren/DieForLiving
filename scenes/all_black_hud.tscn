@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3fm4lkwm75be"]
+[gd_scene load_steps=9 format=3 uid="uid://d3fm4lkwm75be"]
 
 [ext_resource type="Texture2D" uid="uid://ccrmup63rni2u" path="res://assets/sprites/DieDieDie.png" id="1_4mnsc"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_1b1rl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrfai"]
+line_spacing = 1.0
+font = ExtResource("2_1b1rl")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7vgf"]
+font = ExtResource("2_1b1rl")
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_yaj4i"]
+font = ExtResource("2_1b1rl")
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_i2xmy"]
+font = ExtResource("2_1b1rl")
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_7io6r"]
+font = ExtResource("2_1b1rl")
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_b3dd2"]
+font = ExtResource("2_1b1rl")
+font_size = 70
 
 [node name="AllBlackHUD" type="CanvasLayer"]
 
@@ -12,3 +38,51 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_4mnsc")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 893.0
+offset_top = 80.0
+offset_right = 1093.0
+offset_bottom = 201.0
+text = "致谢"
+label_settings = SubResource("LabelSettings_qrfai")
+
+[node name="programmer1" type="Label" parent="."]
+offset_left = 737.0
+offset_top = 679.0
+offset_right = 1193.0
+offset_bottom = 800.0
+text = "开发：lion"
+label_settings = SubResource("LabelSettings_v7vgf")
+
+[node name="programmer2" type="Label" parent="."]
+offset_left = 1266.0
+offset_top = 684.0
+offset_right = 1826.0
+offset_bottom = 805.0
+text = "开发：Bonny"
+label_settings = SubResource("LabelSettings_yaj4i")
+
+[node name="progammer3" type="Label" parent="."]
+offset_left = 299.0
+offset_top = 678.0
+offset_right = 641.0
+offset_bottom = 799.0
+text = "开发:MK"
+label_settings = SubResource("LabelSettings_i2xmy")
+
+[node name="artis1" type="Label" parent="."]
+offset_left = 788.0
+offset_top = 478.0
+offset_right = 1244.0
+offset_bottom = 599.0
+text = "美术：Gigi"
+label_settings = SubResource("LabelSettings_7io6r")
+
+[node name="designer1" type="Label" parent="."]
+offset_left = 803.0
+offset_top = 312.0
+offset_right = 1223.0
+offset_bottom = 433.0
+text = "策划：QQQ"
+label_settings = SubResource("LabelSettings_b3dd2")
