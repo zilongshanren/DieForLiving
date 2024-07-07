@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=15 format=3 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="1_rbmkf"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="PackedScene" uid="uid://csxp83hs504if" path="res://levels/level_4.tscn" id="5_xksgu"]
 [ext_resource type="PackedScene" uid="uid://clnnhcwe8ele3" path="res://scenes/body_mgr.tscn" id="6_k8qrh"]
+[ext_resource type="PackedScene" path="res://scenes/all_black_hud.tscn" id="6_sxuu8"]
 [ext_resource type="PackedScene" uid="uid://dforhbrvtmttd" path="res://scenes/timer.tscn" id="7_0eq7x"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
+[ext_resource type="PackedScene" uid="uid://dr4h02okf5dxj" path="res://scenes/StartPage.tscn" id="7_lspmy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_84vge"]
 font = ExtResource("2_nlliu")
@@ -44,6 +46,10 @@ theme_override_fonts/font = ExtResource("2_nlliu")
 theme_override_font_sizes/font_size = 8
 label_settings = SubResource("LabelSettings_84vge")
 horizontal_alignment = 1
+
+[node name="AllBlackHUD" parent="GameManager" instance=ExtResource("6_sxuu8")]
+
+[node name="StartPage" parent="GameManager" instance=ExtResource("7_lspmy")]
 
 [node name="Player" parent="." instance=ExtResource("1_rbmkf")]
 position = Vector2(-152, 31)

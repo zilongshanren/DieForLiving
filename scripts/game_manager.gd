@@ -20,6 +20,8 @@ func _ready() -> void:
 		var level1 = get_node("/root/Level"+str(i));
 		if (level1):
 			total_time = level1.total_time
+	
+	$AllBlackHUD.visible = false
 
 	if (!game_timer):
 		get_node("/root/Game/Player/timer")
@@ -69,7 +71,10 @@ func go_to_next_level(is_new_game):
 	if (current_level > all_levels.size()):
 		current_level = all_levels.size() - 1
 
+	$AllBlackHUD.visible = true
 	free_previous_levels()
+	await get_tree().create_timer(0.3).timeout
+	$AllBlackHUD.visible = false
 
 	var level = get_level(current_level)
 	load_level(level, is_new_game)
