@@ -82,6 +82,7 @@ func go_to_next_level(is_new_game):
 func new_game():
 	limitless_dead = true
 	total_time = current_level_time
+	$score_label.visible = false
 	get_tree().call_group("bodies", "queue_free")
 	game_timer.stop_timer()
 	game_timer.update_ui()
@@ -123,7 +124,13 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_released(("retry")):
 		print("Retry")
 		new_game()
+		# var start_hud  = get_node("/root/Game/GameManager/StartPage")
+		# start_hud.visible = false
 		get_tree().reload_current_scene()
+
+		var current_scene = get_tree().current_scene
+		if (current_scene):
+			
 	
 	if Input.is_action_just_released(("next_level")):
 		print("next level")
